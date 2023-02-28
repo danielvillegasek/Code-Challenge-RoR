@@ -8,7 +8,7 @@ class ImportsController < ApplicationController
     def create
         file = params[:file] #obtener el archivo
         if file.nil? # si no se selecciono ningun archivo, regresar
-            redirect_to new_import_path, notice: "No se ha seleccionado ningun archivo"
+            redirect_to new_import_path, notice: "No se ha seleccionado ningun archivo, por favor asegurate que los campos esten como se muestran en el ejemplo"
             return
         end
         xlsx = Roo::Spreadsheet.open(file.path) # abrir el archivo, se instaló la gema roo
